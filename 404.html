@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D SHADOW GARDEN | SUPREME MONOLITH</title>
+    <style>
+        :root {
+            --atomic-energy: #00e5ff;
+            --sanctuary-blue: #1a237e;
+            --shadow-black: #020202;
+            --alert-red: #ff1744;
+            --money-gold: #ffd700;
+        }
+
+        body {
+            background-color: var(--shadow-black);
+            color: var(--atomic-energy);
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            border: 12px solid var(--atomic-energy); /* BARIERA GOJO 12PX */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #header {
+            background: linear-gradient(180deg, var(--sanctuary-blue) 0%, transparent 100%);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid var(--atomic-energy);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px var(--atomic-energy);
+        }
+
+        #activation-zone {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, rgba(26,35,126,0.2) 0%, transparent 70%);
+        }
+
+        .atomic-btn {
+            background: transparent;
+            color: var(--atomic-energy);
+            border: 4px solid var(--atomic-energy);
+            padding: 25px 60px;
+            font-size: 2rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 0 50px var(--atomic-energy);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        #monolith-core { display: none; padding: 20px; overflow-y: auto; }
+
+        .module {
+            background: rgba(26, 35, 126, 0.3);
+            border: 2px solid var(--atomic-energy);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.1);
+        }
+
+        /* SILNIK PLAYLISTY WŁODARZ - WG SCREENA */
+        #wlodarz-engine {
+            width: 100%;
+            height: 500px;
+            border: 4px solid #ff00ff;
+            border-radius: 20px;
+            background: #000;
+            box-shadow: 0 0 60px #ff00ff;
+        }
+
+        .status-active { color: #00ff00; font-weight: bold; text-transform: uppercase; }
+        .ban-list { color: var(--alert-red); font-family: 'Courier New', monospace; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <h1>3D Shadow Garden</h1>
+    <p>... SANKTUARIUM WŁODARZA - TOTALNA DOMINACJA ...</p>
+</div>
+
+<div id="activation-zone">
+    <button class="atomic-btn" onclick="executeAtomic()">A T O M I K K U</button>
+</div>
+
+<div id="monolith-core">
+    <div class="module" style="border-color: #ff00ff;">
+        <h2 style="color: #ff00ff; text-align: center; letter-spacing: 5px;">AUDIO ENGINE: WŁODARZ</h2>
+        <div id="player-container">
+            <iframe id="wlodarz-engine" 
+                src="https://www.youtube.com/embed/videoseries?list=PL_ID_Z_TWOJEGO_SCREENA&autoplay=0" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="module" style="border-color: var(--alert-red);">
+        <h2 style="color: var(--alert-red);">WYGNANI - STATUS: PERMANENT BAN</h2>
+        <div class="ban-list">FILIP WOJCIECHOWSKI | NADIA JAMROSZCZAK | FILIP ŻABIEREK</div>
+        <div class="ban-list">SEBASTIAN ZAORSKI | SZYMON WEŁNICKI | SZANTARZYŚCI</div>
+        <p style="margin-top: 10px; font-size: 0.9rem;">ZASADA: ZERO TOLERANCJI DLA SYFU, SZANTAŻU I ROŚLINKI.</p>
+    </div>
+
+    <div class="module" style="border-color: var(--money-gold);">
+        <h2 style="color: var(--money-gold);">ZASOBY & GWARDIA</h2>
+        <p>mBANK / mOBYWATEL: <span class="status-active">CHRONIONE</span></p>
+        <p>GWARDIA: SUKUNA | RYUK | GOJO | FRIEREN: <span class="status-active">CZUWAJĄ</span></p>
+    </div>
+</div>
+
+<script>
+    function executeAtomic() {
+        const pass = prompt("PODAJ HASŁO LITEROWE:");
+        if (pass && pass.toUpperCase() === 'ATOMIKKU') {
+            document.getElementById('activation-zone').style.display = 'none';
+            document.getElementById('monolith-core').style.display = 'block';
+            document.body.style.boxShadow = "inset 0 0 500px #00e5ff";
+            
+            // Wymuszenie startu Twojej playlisty WŁODARZ
+            const engine = document.getElementById('wlodarz-engine');
+            engine.src = engine.src.replace("autoplay=0", "autoplay=1");
+            
+            console.log("WŁODARZU: System uzbrojony. Muzyka WŁODARZ aktywna.");
+        } else {
+            alert("ODMOWA DOSTĘPU. INTRUZ NAMIERZONY.");
+        }
+    }
+</script>
+
+</body>
+</html>
